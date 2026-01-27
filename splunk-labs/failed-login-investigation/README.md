@@ -27,7 +27,9 @@ Investigate multiple failed login attempts to determine whether the activity rep
 ```spl
 index=security action=failure
 | stats count by user, src_ip
----
+
+```
+📄 Full query set: [queries.txt](queries.txt)
 
 ## ⚠️ Findings  
 - Multiple failed login attempts detected targeting a single user account  
