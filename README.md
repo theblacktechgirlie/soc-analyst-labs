@@ -12,7 +12,7 @@ These projects demonstrate my practical training as an aspiring SOC Analyst with
 
 ## 🧪 Labs Included
 
-### 1. Failed Login Investigation (Splunk)
+### 1. [Failed Login Investigation (Splunk)](splunk-labs/failed-login-investigation)
 - Simulated brute-force login attempts  
 - Analyzed authentication logs in Splunk  
 - Identified suspicious IP activity  
