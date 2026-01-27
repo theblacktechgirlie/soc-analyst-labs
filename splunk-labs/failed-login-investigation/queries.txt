@@ -1,0 +1,17 @@
+# Failed Login Investigation - Splunk Queries
+
+# Identify users with multiple failed login attempts
+index=security action=failure
+| stats count by user, src_ip
+| where count > 5
+
+# Check for successful login after failures
+index=security (action=failure OR action=success)
+| stats count by action by user, src_ip
+
+# Identify external IP sources
+index=security action=failure
+| where NOT cidrmatch("10.0.0.0/8", src_ip)
+| where NOT cidrmatch("172.16.0.0/12", src_ip)
+| where NOT cidrmatch("192.168.0.0/16", src_ip)
+| stats count by src_ip
