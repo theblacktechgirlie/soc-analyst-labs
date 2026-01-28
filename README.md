@@ -13,12 +13,22 @@ These projects demonstrate my practical training as an aspiring SOC Analyst with
 ## 🧪 Labs Included
 
 ### 1. [Failed Login Investigation (Splunk)](splunk-labs/failed-login-investigation)
-- Simulated brute-force login attempts  
-- Analyzed authentication logs in Splunk  
-- Identified suspicious IP activity  
-- Documented findings and escalation decision  
+- Investigated multiple failed login attempts
+- Identified source IP and whether it was internal or external
+- Checked for successful authentication after failures
+- Determined activity classification (false positive vs suspicious)
 
-### 2. Network Traffic Analysis
+
+### 2. [Brute-Force Attack Detection (Splunk)](splunk-labs/brute-force-detection)
+
+- Analyzed high-volume authentication failures across multiple time windows
+- Identified repeated login attempts targeting the same account from a single source
+- Detected brute-force behavior based on failure frequency thresholds
+- Correlated authentication events to confirm attack pattern
+- Documented findings and escalated per incident response procedures
+
+
+### 3. Network Traffic Analysis
 - Reviewed packet captures to identify abnormal behavior  
 - Correlated network traffic with log events  
 
