@@ -1,0 +1,17 @@
+# Brute-Force Detection - Splunk Queries
+
+# Detect high-volume failed logins from a single IP
+index=security action=failure
+| stats count by src_ip
+| where count > 20
+
+# Identify multiple users targeted from one IP
+index=security action=failure
+| stats dc(user) as unique_users count by src_ip
+| where unique_users > 3
+
+# Time-based brute-force detection
+index=security action=failure
+| bin _time span=5m
+| stats count by src_ip, _time
+| where count > 10
